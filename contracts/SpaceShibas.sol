@@ -1095,14 +1095,12 @@ pragma solidity ^0.8.0;
 
 contract SpaceShibas is ERC721Enumerable {
 
-  address public owner;
+  address public immutable owner;
   uint256 public constant MAX_SUPPLY = 10000;
-  uint256 public minPrice = 1 ether / 20;
-  // TODO: DON'T SET TO TRUE- DEBUGGING ONLY
-  bool public saleEnabled = true;
-  // TODO: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//  bool public saleEnabled;
+  uint256 public price = 1 ether / 20;
+  bool public saleEnabled = true; // TODO: REMOVE TRUE BEFORE LAUNCH
   uint256 private counter = 1;
+  event ShibasBought(address buyer, uint256 shibasBought, uint256[10] shibaIndexes);
 
   constructor(string memory name, string memory symbol) ERC721(name, symbol) {
     owner = msg.sender;
@@ -1119,14 +1117,16 @@ contract SpaceShibas is ERC721Enumerable {
   function buy(uint256 amountToBuy) public payable {
     require(saleEnabled, "Sale has ended");
     require(amountToBuy > 0 && amountToBuy <= 10, "Invalid amount");
-    require(msg.value >= minPrice * amountToBuy, "Not enough ether to buy");
+    require(msg.value == price * amountToBuy, "Invalid amount of ether for amount to buy");
 
     uint256[10] memory tokenIdsToMint;
     uint256 tokensToMint;
     uint256 i = counter;
+
     while (tokensToMint < amountToBuy) {
-      if (counter > 10000) {
+      if (counter > MAX_SUPPLY) {
         saleEnabled = false;
+        payable(msg.sender).transfer((amountToBuy - tokensToMint) * price);
         break;
       }
       if (!_exists(i)) {
@@ -1135,6 +1135,8 @@ contract SpaceShibas is ERC721Enumerable {
       }
       counter = i++;
     }
+
+    emit ShibasBought(msg.sender, tokensToMint, tokenIdsToMint);
 
     for (uint256 j = 0; j < tokensToMint; j++) {
       _mint(msg.sender, tokenIdsToMint[j]);
@@ -1156,9 +1158,9 @@ contract SpaceShibas is ERC721Enumerable {
     counter = to;
   }
 
-  function setMinPrice(uint256 to) public {
+  function setPrice(uint256 to) public {
     require(msg.sender == owner, "Only owner can set prices");
-    minPrice = to;
+    price = to;
   }
 
 

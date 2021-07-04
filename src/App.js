@@ -4,7 +4,7 @@ import { ethers, utils } from 'ethers'
 import './App.css'
 import SpaceShibas from './artifacts/contracts/SpaceShibas.sol/SpaceShibas.json'
 
-const spaceShibasAddress = '0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0'
+const spaceShibasAddress = '0x5FbDB2315678afecb367f032d93F642f64180aa3'
 
 function App() {
   const [buyAmount, setBuyAmountValue] = useState(0)
@@ -15,7 +15,7 @@ function App() {
   const spaceShibasInterface = new utils.Interface(SpaceShibas.abi)
 
   useAsyncEffect(async () => {
-    setIsSaleActive(await fetchSaleActive())
+    setIsSaleActive(await fetchIsSaleActive())
     setBuyPrice(utils.formatEther(await getBuyPrice()))
   }, [])
 
@@ -28,20 +28,21 @@ function App() {
       const provider = new ethers.providers.Web3Provider(window.ethereum)
       const contract = new ethers.Contract(spaceShibasAddress, SpaceShibas.abi, provider)
       try {
-        const data = await contract.minPrice()
-        console.log('minPrice result:', data)
+        const data = await contract.price()
+        console.log('price result:', data)
         return data
       } catch (err) {
-        console.log("minPrice Error:", err)
+        console.log("price Error:", err)
       }
     }
   }
 
-  async function fetchSaleActive() {
+  async function fetchIsSaleActive() {
     if (typeof window.ethereum !== 'undefined') {
       const provider = new ethers.providers.Web3Provider(window.ethereum)
       const contract = new ethers.Contract(spaceShibasAddress, SpaceShibas.abi, provider)
       try {
+        console.log('?!?!?!?!?!?!?!')
         const data = await contract.saleEnabled()
         console.log('data:', data)
         return data
