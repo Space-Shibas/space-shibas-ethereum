@@ -1098,7 +1098,7 @@ contract SpaceShibas is ERC721Enumerable {
   address public immutable owner;
   uint256 public constant MAX_SUPPLY = 10000;
   uint256 public price = 1 ether / 20;
-  bool public saleEnabled = true; // TODO: REMOVE TRUE BEFORE LAUNCH
+  bool public saleEnabled;
   uint256 private counter = 1;
   event ShibasBought(address buyer, uint256 shibasBought, uint256[10] shibaIndexes);
 
