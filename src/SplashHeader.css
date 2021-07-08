@@ -10,7 +10,7 @@
 }
 
 .splash-spacer {
-    height: calc(5vw + 10vh - 90px);
+    height: calc(5vw + 10vh - 60px);
     max-height: 200px;
 }
 
@@ -47,7 +47,7 @@
 .logo {
     width: 90%;
     max-width: 760px;
-    margin-top: 90px;
+    margin-top: 60px;
 }
 
 .button-1 {
