@@ -199,7 +199,37 @@ function MintSection() {
           min={1}
           max={10}
           step={1}
-          onChange={e => setBuyAmountValue(e.target.value)}
+          pattern="[0-9]"
+          onClick={e => {
+            e.target.select()
+          }}
+          onChange={e => {
+            const inputValue = e.target.value
+            console.log(inputValue)
+            if (inputValue.indexOf('.') > -1) {
+              setBuyAmountValue(inputValue.split('.')[0])
+              return
+            }
+            if (inputValue === '') {
+              return
+            }
+            const inputValueInt = parseInt(inputValue)
+            if (isNaN(inputValue)) {
+              return
+            }
+            if (inputValueInt > 10) {
+              let toSet = inputValue % 10
+              toSet = toSet == 0 ? 10 : toSet
+              toSet = inputValue == 100 ? 10 : toSet
+              toSet = toSet < 1 ? 1 : toSet
+              setBuyAmountValue(toSet < 1 ? 1 : toSet)
+              return
+            }
+            if (!e.target.validity.valid) {
+              return
+            }
+            setBuyAmountValue(inputValue)
+          }}
           value={buyAmount}
         />
 
