@@ -2,6 +2,7 @@
   "name": "space-shibas",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.2",
     "@nomiclabs/hardhat-waffle": "^2.0.1",
@@ -13,7 +14,9 @@
     "ethers": "^5.4.1",
     "hardhat": "^2.4.1",
     "react": "^17.0.2",
+    "react-animate-on-change": "^2.2.0",
     "react-dom": "^17.0.2",
+    "react-modal": "^3.14.3",
     "react-scripts": "4.0.3",
     "swr": "1.0.0-beta.7",
     "use-async-effect": "^2.2.3",

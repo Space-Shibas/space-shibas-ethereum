@@ -1,0 +1,126 @@
+.shiba-portrait {
+    display: inline-block;
+    position: relative;
+    margin-right: 20px;
+    margin-top: 15px;
+
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+/*.shiba-portrait:not(:last-child) {*/
+/*    margin-right: 20px;*/
+/*}*/
+
+.shiba-portrait .mystery {
+    opacity: 1;
+
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+.shiba-portrait .purchased {
+    position: absolute;
+    left: 0;
+
+    -webkit-transition: opacity 1s, transform 0.2s;
+    -moz-transition: opacity 1s, transform 0.2s;
+    transition: opacity 1s, transform 0.2s;
+    transition-property: opacity, transform;
+}
+
+.shiba-portrait:hover > .complete {
+    cursor: pointer;
+    -webkit-transition: transform 0.2s;
+    -moz-transition: transform 0.2s;
+    transition: transform 0.2s;
+    transform: scale(1.15);
+}
+
+.shiba-portrait:active > .complete {
+    cursor: pointer;
+    -webkit-transition: transform 0.05s;
+    -moz-transition: transform 0.05s;
+    transition: transform 0.05s;
+    transform: scale(1.1);
+}
+
+.blank {
+    opacity: 0.2 !important;
+    transform: scale(0.98);
+}
+
+.hidden {
+    opacity: 0 !important;
+}
+
+.waiting {
+    animation: pulse 3s ease-in-out infinite;
+}
+
+.loading {
+    opacity: 1;
+    position: absolute;
+    left: 0;
+    /*background-image: url("./images/loading-image.gif");*/
+    background-size: contain;
+    width: 170px;
+    height: 170px;
+    transform: scale(0.3);
+
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    transition: all 1s;
+    transition-delay: 1s !important;
+}
+
+.shiba-portrait img {
+    border-radius: 20px;
+    width: 170px;
+
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+.opensea-link {
+    opacity: 0;
+    font-family: 'Symtext';
+    font-size: 14px;
+    color: white;
+    margin-top: -17px;
+    text-align: center;
+    background-color: #002cffbf;
+    width: 150px;
+    margin-left: 10px;
+    position: absolute;
+    text-decoration: underline;
+
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    transition-delay: 0s;
+}
+
+.shiba-portrait:hover > .show-link {
+    cursor: pointer;
+    transition-delay: 0.15s;
+    opacity: 1;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.02);
+    }
+}
+
+@keyframes rainbow-glow {
+    0% {
+        box-shadow: 0 0 10px 5px #ff8181;
+    }
+}

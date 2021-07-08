@@ -2,12 +2,19 @@ import useSWR from 'swr'
 
 
 export function createContractStateHook(contract, globalSwrOptions = {}) {
-  function useContractState(stateVarNameOrObject, initialData, transformData, swrOptions = {}) {
+  if (!contract) {
+    function useInitialOnly(_, initialData) {
+      return [initialData]
+    }
+    return useInitialOnly
+  }
+  function useContractState(stateVarNameOrObject, initialData, transformData, transformInitial, swrOptions = {}) {
     let stateVarName = stateVarNameOrObject
     if (typeof stateVarNameOrObject !== 'string') {
       stateVarName = stateVarNameOrObject.stateVarName
       initialData = stateVarNameOrObject.initialData
       transformData = stateVarNameOrObject.transformData
+      transformInitial = stateVarNameOrObject.transformInitial
       swrOptions = stateVarNameOrObject.swrOptions || {}
     }
     if (typeof contract[stateVarName] !== 'function') {
@@ -41,6 +48,12 @@ export function createContractStateHook(contract, globalSwrOptions = {}) {
     if (dataToReturn !== undefined && transformData) {
       dataToReturn = transformData(dataToReturn)
     }
+
+    //
+    if (stateVarName === 'shibasMinted') {
+      console.log('refreshing!')
+    }
+    //
 
     return [dataToReturn, error, isValidating, mutate]
   }

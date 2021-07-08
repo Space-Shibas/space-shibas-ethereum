@@ -1,0 +1,270 @@
+.MintSection {
+  text-align: left;
+  font-family: WorkSans;
+  max-width: min(70vw, 1100px);
+  padding-top: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 170px;
+  padding-bottom: 50px;
+}
+
+.mint-content-left {
+  text-align: left;
+  width: 40vw;
+  max-width: 699px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.mint-interface {
+  text-align: left;
+}
+
+.shibas-minted-wrapper {}
+
+.shibas-minted {
+  font-family: 'Symtext';
+  font-size: 22px;
+  width: 400px;
+  text-align: center;
+}
+
+.shiba-minted-count {
+  display: inline-block;
+}
+
+.shiba-minted-count--flash {
+  animation: flash 1.5s;
+}
+
+@keyframes flash {
+  0% {
+    color: #00bd00;
+    transform: scale(1.2);
+  }
+  100% {
+    color: black;
+    transform: scale(1);
+  }
+}
+
+.mint-interface input {
+  padding: 10px 10px 10px 20px;
+  border: none;
+  font-size: min(10vw, 32px);
+  text-align: center;
+  width: min(15vw, 75px);
+  height: 49px;
+  border-radius: 10px;
+  margin-right: 12px;
+  margin-top: 24px;
+  position: relative;
+}
+
+.mint-interface input:focus {
+  outline: none;
+}
+
+.mint-interface button {
+  cursor: pointer;
+  vertical-align: top;
+  font-family: Symtext;
+  /*width: auto;*/
+  color:#ffffff;
+  text-decoration:none;
+  font-size: min(8vw, 24px);
+  border-radius:10px;
+  border:solid 1px #E8A627;
+  background:#E8A627;
+  text-align:center;
+  padding:16px 18px 14px;
+  display: inline-block;
+  margin-top: 20px;
+  width: min(35vw, 283px);
+  height: 67px;
+  margin-bottom: 6px;
+
+  -webkit-transition: all 0.15s;
+  -moz-transition: all 0.15s;
+  transition: all 0.15s;
+
+  -webkit-box-shadow: 0px 6px 0px #684B14;
+  -moz-box-shadow: 0px 6px 0px #684B14;
+  box-shadow: 0px 6px 0px #684B14;
+}
+
+.mint-interface button:active {
+  -webkit-box-shadow: 0px 2px 0px #684B14 !important;
+  -moz-box-shadow: 0px 2px 0px #684B14 !important;
+  box-shadow: 0px 2px 0px #684B14 !important;
+  margin-top: 24px;
+  margin-bottom: -4px;
+}
+
+.mint-interface button:hover {
+  border:solid 1px #edb045;
+  background: #edb045;
+  -webkit-box-shadow: 0px 6px 0px #674c1b;
+  -moz-box-shadow: 0px 6px 0px #674c1b;
+  box-shadow: 0px 6px 0px #674c1b;
+}
+
+.minting, .minting:hover, .minting:active {
+  cursor: default !important;
+  border:solid 1px #a6bae0 !important;
+  background:#a6bae0 !important;
+  -webkit-box-shadow: 0px 6px 0px #5e697f !important;
+  -moz-box-shadow: 0px 6px 0px #5e697f !important;
+  box-shadow: 0px 6px 0px #5e697f !important;
+}
+
+.sold-out, .sold-out:hover, .sold-out.active {
+  cursor: not-allowed !important;
+  border:solid 1px #a6bae0 !important;
+  background:#a6bae0 !important;
+  -webkit-box-shadow: 0px 6px 0px #5e697f !important;
+  -moz-box-shadow: 0px 6px 0px #5e697f !important;
+  box-shadow: 0px 6px 0px #5e697f !important;
+}
+
+.mint-interface button .mint-price {
+  float: right;
+  margin-right: 5px;
+}
+
+.pixel-party {
+  margin-top: 20px;
+  width: 69px;
+  image-rendering: pixelated;
+  margin-right: 12px;
+}
+
+.mint-content-right {
+  width: 30vw;
+  max-width: 400px;
+  display: inline-block;
+  text-align: left;
+  /*padding-left: 20px;*/
+}
+
+@media (max-width: 1000px) {
+  .MintSection {
+    padding-left: 0;
+  }
+  .mint-content-left {
+    width: 70vw;
+  }
+  .mint-content-right {
+    display: none;
+  }
+  .mint-interface {
+    text-align: center;
+  }
+  .shibas-minted {
+    width: inherit;
+  }
+  .mint-interface button .mint-price {
+    display: none;
+  }
+  .mint-interface button .mint-word {
+    float: inherit !important;
+    margin-left: unset !important;
+    margin-left: 0px;
+    padding: 16px 0px 14px;
+  }
+  .mint-gallery {
+    text-align: center;
+  }
+}
+
+
+.mint-content-right img {
+  width: 300px;
+}
+
+.view-my-shibas {
+  margin-top: 30px;
+}
+
+.view-my-shibas button {
+  cursor: pointer;
+  vertical-align: top;
+  font-family: Symtext;
+  /*width: auto;*/
+  color:#ffffff;
+  text-decoration:none;
+  font-size: min(8vw, 24px);
+  border-radius:10px;
+  border:solid 1px #b799ff; /*b799ff 9378d6*/
+  background:#b799ff;
+  text-align:center;
+  padding:16px 18px 14px;
+  display: inline-block;
+  margin-top: 20px;
+  width: min(35vw, 283px);
+  height: 67px;
+  margin-bottom: 6px;
+
+  -webkit-transition: all 0.15s;
+  -moz-transition: all 0.15s;
+  transition: all 0.15s;
+
+  -webkit-box-shadow: 0px 6px 0px #9378d6;
+  -moz-box-shadow: 0px 6px 0px #9378d6;
+  box-shadow: 0px 6px 0px #9378d6;
+}
+
+.view-my-shibas button:active {
+  -webkit-box-shadow: 0px 2px 0px #684B14 !important;
+  -moz-box-shadow: 0px 2px 0px #684B14 !important;
+  box-shadow: 0px 2px 0px #684B14 !important;
+  margin-top: 24px;
+  /*margin-bottom: -4px;*/
+}
+
+.not-minted-yet, .not-minted-yet button {
+  opacity: 0;
+  cursor: default;
+}
+
+.get-metamask-modal-overlay {
+  position: fixed;
+  inset: 0px;
+  background-color: rgba(0,0,0,0.75);
+}
+
+.error-message {
+  margin-top: 28px;
+  font-weight: bold;
+  color: red;
+}
+
+.get-metamask-modal {
+  border-radius: 10px;
+  text-align: center;
+  background-color: white;
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.get-metamask-modal button {
+  margin-top: -10px;
+  margin-right: -10px;
+  float: right;
+  border: none;
+  background: white;
+}
+
+.get-metamask-modal svg {
+  width: 30px;
+  vertical-align: middle;
+  margin-left: 10px
+}
+
+.get-metamask-modal a {
+  font-size: 20px;
+}

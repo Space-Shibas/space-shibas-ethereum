@@ -1,0 +1,10 @@
+.mint-gallery {
+    text-align: left;
+    margin-top: 10px;
+}
+
+@media (max-width: 1000px) {
+    .mint-gallery {
+        text-align: center;
+    }
+}

@@ -2,7 +2,7 @@ const hre = require("hardhat");
 
 async function main() {
   const SpaceShibas = await hre.ethers.getContractFactory("SpaceShibas");
-  const spaceShibas = await SpaceShibas.deploy("Space Shibas", "SPACE-SHIBAS");
+  const spaceShibas = await SpaceShibas.deploy("Space Shibas", "SPACE-SHIBAS", "ipfs://QmYcsZAmYo19UNzZa1knTb8JahT2ymgvyTYszvtzieYerK");
 
   await spaceShibas.deployed();
 
