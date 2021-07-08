@@ -51,9 +51,6 @@ function MintSection() {
   }
 
   useEffect(() => {
-    console.log('hasMintedShibas:', hasMintedShibas)
-    console.log('loadedNoneMinted:', loadedNoneMinted.current)
-    console.log('-------')
     if (hasMintedShibas && loadedNoneMinted.current !== hasMintedShibas) {
       setShowViewShibas(true)
     }
@@ -62,14 +59,10 @@ function MintSection() {
   const [buyPrice] = useSpaceShibasState({
     stateVarName: 'price',
     initialData: utils.parseUnits('0'),
-    transformData: (data) => {
-      console.log(data)
-      return {
-        wei: data,
-        // number: utils.formatEther(data.mul(utils.parseUnits('1000000000000000')))
-        number: utils.formatEther(data)
-      }
-    }
+    transformData: (data) => ({
+      wei: data,
+      number: utils.formatEther(data)
+    })
   })
 
   const [isSaleActive] = useSpaceShibasState('saleEnabled', true)

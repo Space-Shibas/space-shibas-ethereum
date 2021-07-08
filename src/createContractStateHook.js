@@ -49,12 +49,6 @@ export function createContractStateHook(contract, globalSwrOptions = {}) {
       dataToReturn = transformData(dataToReturn)
     }
 
-    //
-    if (stateVarName === 'shibasMinted') {
-      console.log('refreshing!')
-    }
-    //
-
     return [dataToReturn, error, isValidating, mutate]
   }
   return useContractState

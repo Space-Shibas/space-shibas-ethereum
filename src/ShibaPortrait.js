@@ -14,12 +14,9 @@ function ShibaPortrait({ id, nftId, appState, isBlank, contractAddress }) {
 
   useEffect(() => {
     if (appState === APP_STATE.readyToMint) {
-      console.log(`${id} - setting to false`)
       setImagesPreloaded({})
     }
   }, [appState])
-
-  console.log(id +' imagePreloaded:', imagesPreloaded)
 
   let mysteryClassName
   if (appState === APP_STATE.waitingForTx && !isBlank) {
