@@ -51,6 +51,7 @@
 }
 
 .button-1 {
+    cursor: pointer;
     font-family: Symtext;
     /*width: auto;*/
     color:#ffffff;

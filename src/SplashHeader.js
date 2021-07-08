@@ -9,6 +9,7 @@ import { ReactComponent as OpenSeaIcon } from "./images/open-sea.svg";
 
 function SplashHeader() {
 
+  const scrollToMint = new Event('scrollToMint')
 
   return (
     <div className="SplashHeader">
@@ -23,7 +24,7 @@ function SplashHeader() {
         </div>
       </div>
       <img className="logo" src={logo} alt="Space Shibas Logo" /><br />
-      <a href="#mint" className="button-1">
+      <a onClick={() => dispatchEvent(scrollToMint)} className="button-1">
         MINT SHIBAS
       </a><br />
       <a href="#" className="button-2">

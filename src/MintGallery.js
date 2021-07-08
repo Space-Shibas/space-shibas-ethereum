@@ -8,7 +8,7 @@ function MintGallery({ buyAmount, purchasedIds, appState, contractAddress }) {
         const isBlank = i >= buyAmount
         portraits.push(
           <ShibaPortrait
-            id={`portrait-${i}`}
+            key={`portrait-${i}`}
             nftId={nftId}
             appState={appState}
             isBlank={isBlank}

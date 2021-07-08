@@ -205,7 +205,6 @@ function MintSection() {
           }}
           onChange={e => {
             const inputValue = e.target.value
-            console.log(inputValue)
             if (inputValue.indexOf('.') > -1) {
               setBuyAmountValue(inputValue.split('.')[0])
               return
@@ -247,10 +246,10 @@ function MintSection() {
     }
   }
 
-  const bind = useSmoothScrollTo('#mint')
+  const refToScroll = useSmoothScrollTo('#mint', 'scrollToMint')
 
   return (
-    <div {...bind} className="MintSection">
+    <div ref={refToScroll} className="MintSection">
       <div className="mint-content-left">
         <h1>How to get your Space Shiba companion!</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas maximus lectus justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas maximus lectus justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas maximus lectus justo.</p>
