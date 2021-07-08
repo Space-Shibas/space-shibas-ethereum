@@ -121,15 +121,19 @@
 }
 
 .button-2:hover {
-    border:solid 1px #5e54b9;
-    background: #5e54b9;
-    -webkit-box-shadow: 0px 6px 0px #28206c;
-    -moz-box-shadow: 0px 6px 0px #28206c;
-    box-shadow: 0px 6px 0px #28206c;
+    border:solid 1px #6c5ac3;
+    background: #6c5ac3;
+    -webkit-box-shadow: 0px 6px 0px #423486;
+    -moz-box-shadow: 0px 6px 0px #423486;
+    box-shadow: 0px 6px 0px #423486;
 }
 
 .social-icons {
     margin-top: calc(5vh + 53px)
+}
+
+.social-icon svg:hover path {
+    fill: #ffa500;
 }
 
 .social-icon {

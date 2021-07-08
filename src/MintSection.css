@@ -60,10 +60,18 @@
   margin-right: 12px;
   margin-top: 24px;
   position: relative;
+  caret-color: transparent;
+  transition: all 0.2s;
+  box-shadow: 0 0 4px 0 transparent
+}
+
+.mint-interface input::selection {
+  background: transparent;
 }
 
 .mint-interface input:focus {
   outline: none;
+  box-shadow: 0 0 0 4px #6901ff;
 }
 
 .mint-interface button {
@@ -196,8 +204,8 @@
   text-decoration:none;
   font-size: min(8vw, 24px);
   border-radius:10px;
-  border:solid 1px #b799ff; /*b799ff 9378d6*/
-  background:#b799ff;
+  border:solid 1px #AA86FD;
+  background:#AA86FD;
   text-align:center;
   padding:16px 18px 14px;
   display: inline-block;
@@ -210,9 +218,17 @@
   -moz-transition: all 0.15s;
   transition: all 0.15s;
 
-  -webkit-box-shadow: 0px 6px 0px #9378d6;
-  -moz-box-shadow: 0px 6px 0px #9378d6;
-  box-shadow: 0px 6px 0px #9378d6;
+  -webkit-box-shadow: 0px 6px 0px #7861b3;
+  -moz-box-shadow: 0px 6px 0px #7861b3;
+  box-shadow: 0px 6px 0px #7861b3;
+}
+
+.view-my-shibas button:hover {
+  border:solid 1px #b392ff;
+  background:#b392ff;
+  -webkit-box-shadow: 0px 6px 0px #836eb9;
+  -moz-box-shadow: 0px 6px 0px #836eb9;
+  box-shadow: 0px 6px 0px #836eb9;
 }
 
 .view-my-shibas button:active {
