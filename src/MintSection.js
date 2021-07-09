@@ -66,12 +66,19 @@ function MintSection() {
     })
   })
 
-  const [isSaleActive] = useSpaceShibasState('saleEnabled', true)
-  const [shibasMinted, _, __, refreshShibasMinted] = useSpaceShibasState({
+  const [isSaleActive, _, __, refreshIsSaleActive] = useSpaceShibasState('saleEnabled', true)
+  const [shibasMinted, ___, ____, refreshShibasMinted] = useSpaceShibasState({
     stateVarName: 'shibasMinted',
     transformData: (data) => data.toNumber(),
     swrOptions: { refreshInterval: 6000 },
   })
+  const [maxShibaCount] = useSpaceShibasState({
+    initialData: utils.parseUnits('10000', 'wei'),
+    stateVarName: 'MAX_SUPPLY',
+    transformData: (data) => data.toNumber(),
+  })
+
+  const allSold = maxShibaCount === shibasMinted
 
   const shibasMintedPrevious = usePrevious(shibasMinted)
   useEffect(() => {
@@ -85,10 +92,10 @@ function MintSection() {
   }, [shibasMinted, shibasMintedPrevious])
 
   useEffect(() => {
-    if (!isSaleActive) {
+    if (!isSaleActive || allSold) {
       setAppState(APP_STATE.soldOut)
     }
-  }, [isSaleActive])
+  }, [isSaleActive, allSold])
 
   function showModal(bool) {
     return () => setModalOpen(bool)
@@ -136,6 +143,7 @@ function MintSection() {
       setHasMintedShibas(true)
       await refreshShibasMinted()
     } catch (err) {
+      refreshIsSaleActive()
       console.error(err)
       if (txHash) {
         setErrorMessage(
