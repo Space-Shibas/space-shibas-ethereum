@@ -6,6 +6,7 @@ import { ReactComponent as DiscordIcon } from "./images/discord.svg";
 import { ReactComponent as TwitterIcon } from "./images/twitter.svg";
 import { ReactComponent as GithubIcon } from "./images/github.svg";
 import { ReactComponent as OpenSeaIcon } from "./images/open-sea.svg";
+import { OPENSEA_NAME } from "./MintSection";
 
 function SplashHeader() {
 
@@ -27,7 +28,7 @@ function SplashHeader() {
       <a onClick={() => dispatchEvent(scrollToMint)} className="button-1">
         MINT SHIBAS
       </a><br />
-      <a href="#" className="button-2">
+      <a href={`https://opensea.io/collection/${OPENSEA_NAME}`} target='_blank' rel='noreferrer' className="button-2">
         VIEW GALLERY
       </a><br />
       <div className="social-icons">

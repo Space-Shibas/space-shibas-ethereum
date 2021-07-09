@@ -195,7 +195,7 @@
   margin-top: 30px;
 }
 
-.view-my-shibas button {
+.view-my-shibas a {
   cursor: pointer;
   vertical-align: top;
   font-family: Symtext;
@@ -211,7 +211,6 @@
   display: inline-block;
   margin-top: 20px;
   width: min(35vw, 283px);
-  height: 67px;
   margin-bottom: 6px;
 
   -webkit-transition: all 0.15s;
@@ -223,7 +222,7 @@
   box-shadow: 0px 6px 0px #7861b3;
 }
 
-.view-my-shibas button:hover {
+.view-my-shibas a:hover {
   border:solid 1px #b392ff;
   background:#b392ff;
   -webkit-box-shadow: 0px 6px 0px #836eb9;
@@ -231,7 +230,7 @@
   box-shadow: 0px 6px 0px #836eb9;
 }
 
-.view-my-shibas button:active {
+.view-my-shibas a:active {
   -webkit-box-shadow: 0px 2px 0px #684B14 !important;
   -moz-box-shadow: 0px 2px 0px #684B14 !important;
   box-shadow: 0px 2px 0px #684B14 !important;
