@@ -7,7 +7,7 @@ import './ShibaPortrait.css'
 const BASE_URI = 'https://spaceshibas.mypinata.cloud/ipfs/QmUMJ8KCcrLFsY8946qcq7U6jiwVHhML4ydQB1uc1n52sn'
 // const BASE_URI = 'https://ipfs.io/ipfs/QmUMJ8KCcrLFsY8946qcq7U6jiwVHhML4ydQB1uc1n52sn'
 const TRANSPARENT = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII='
-const OPENSEA_URI_PREFIX = 'https://testnets.opensea.io/assets'
+const OPENSEA_URI_PREFIX = 'https://opensea.io/assets'
 
 function ShibaPortrait({ id, nftId, appState, isBlank, contractAddress }) {
   const [imagesPreloaded, setImagesPreloaded] = useState({})
