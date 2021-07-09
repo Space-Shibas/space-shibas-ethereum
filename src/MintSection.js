@@ -140,7 +140,8 @@ function MintSection() {
       if (txHash) {
         setErrorMessage(
           <div className='error-message'>
-            Transaction failed: {err.message} <a href={`https://etherscan.io/tx/${txHash}`} target="_blank" rel='noreferrer'>Click here to see what happened on EtherScan.</a>
+            Transaction failed; you may have run out of gas. <br />
+            <a href={`https://etherscan.io/tx/${txHash}`} target="_blank" rel='noreferrer'>Click here to see what happened on EtherScan.</a>
           </div>
         )
       } else {
