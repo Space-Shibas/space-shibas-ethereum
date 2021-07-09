@@ -11,6 +11,8 @@
 
 .MintSection h1 {
   margin-top: 0;
+  font-family: Symtext;
+  font-weight: normal;
 }
 
 .MintSection p {
@@ -196,6 +198,9 @@
   .mint-gallery {
     text-align: center;
   }
+  .view-my-shibas {
+    text-align: center;
+  }
 }
 
 
@@ -205,6 +210,12 @@
 
 .view-my-shibas {
   margin-top: 30px;
+  font-family: Symtext;
+}
+
+.view-my-shibas p {
+  font-size: 20px;
+  margin-bottom: 0;
 }
 
 .view-my-shibas a {
@@ -222,8 +233,8 @@
   padding:16px 18px 14px;
   display: inline-block;
   margin-top: 20px;
-  width: min(35vw, 283px);
   margin-bottom: 6px;
+  margin-right: 20px;
 
   -webkit-transition: all 0.15s;
   -moz-transition: all 0.15s;

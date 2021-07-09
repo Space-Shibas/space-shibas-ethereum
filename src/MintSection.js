@@ -312,12 +312,20 @@ function MintSection() {
         disabled={!showViewShibas}
         className={showViewShibas ? 'view-my-shibas' : 'view-my-shibas not-minted-yet'}
       >
+        <p>View my shibas on:</p>
         <a
           href={`https://opensea.io/${window.ethereum.selectedAddress}/${OPENSEA_NAME}`}
           target='_blank'
           rel='noreferrer'
         >
-          View My Shibas
+          OpenSea
+        </a>
+        <a
+          href={`https://rarible.com/user/${window.ethereum.selectedAddress}?tab=owned$`}
+          target='_blank'
+          rel='noreferrer'
+        >
+          Rarible
         </a>
       </div>
 
