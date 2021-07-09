@@ -9,6 +9,14 @@
   padding-bottom: 50px;
 }
 
+.MintSection h1 {
+  margin-top: 0;
+}
+
+.MintSection p {
+  font-size: 18px;
+}
+
 .mint-content-left {
   text-align: left;
   width: 40vw;
@@ -19,6 +27,7 @@
 
 .mint-interface {
   text-align: left;
+  margin-top: 35px;
 }
 
 .shibas-minted-wrapper {}
@@ -159,6 +168,9 @@
 @media (max-width: 1000px) {
   .MintSection {
     padding-left: 0;
+  }
+  .MintSection h1 {
+    text-align: center;
   }
   .mint-content-left {
     width: 70vw;

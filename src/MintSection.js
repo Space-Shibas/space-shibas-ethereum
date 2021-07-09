@@ -275,8 +275,8 @@ function MintSection() {
   return (
     <div ref={refToScroll} className="MintSection">
       <div className="mint-content-left">
-        <h1>How to get your Space Shiba companion!</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas maximus lectus justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas maximus lectus justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas maximus lectus justo.</p>
+        <h1>Find your Space Shibas!</h1>
+        <p>10,000 Space Shibas have wandered off and gotten lost in the vast expanse of the universe. Use the mint button to bring them back down to Earth! Each mint has enough capacity to beam down 10 Space Shibas at a time.</p>
         <div className="mint-interface">
           <div className='shibas-minted-wrapper'>
             {shibasMinted !== undefined && <div className='shibas-minted'>
