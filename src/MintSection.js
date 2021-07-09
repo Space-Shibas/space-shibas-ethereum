@@ -321,7 +321,7 @@ function MintSection() {
           OpenSea
         </a>
         <a
-          href={`https://rarible.com/user/${window.ethereum.selectedAddress}?tab=owned$`}
+          href={`https://rarible.com/user/${window.ethereum.selectedAddress}?tab=owned`}
           target='_blank'
           rel='noreferrer'
         >
