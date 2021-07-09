@@ -16,9 +16,10 @@ import {useSmoothScrollTo} from "./useSmoothScrollTo";
 import {useLocalStorage} from './useLocalStorage'
 import {usePrevious} from "./usePrevious";
 
-const spaceShibasAddress = '0x0167F45E9B2F26BeBBE8a2b266804CAE6968d179'
+const SPACE_SHIBAS_ADDRESS = '0xfb5b1646c1a66931bc1bf521c8a64634786926c5'
+const CHAIN_ID = '0x4'
 const provider = resolveProvider()
-const spaceShibas = createContractHelper(spaceShibasAddress, SpaceShibas.abi, provider)
+const spaceShibas = createContractHelper(SPACE_SHIBAS_ADDRESS, SpaceShibas.abi, provider)
 const useSpaceShibasState = createContractStateHook(spaceShibas.reader)
 
 export const APP_STATE = {
@@ -95,6 +96,10 @@ function MintSection() {
 
   async function requestAccount() {
     await window.ethereum.request({ method: 'eth_requestAccounts' })
+    await window.ethereum.request({
+      method: 'wallet_switchEthereumChain',
+      params: [{ chainId: CHAIN_ID }],
+    });
   }
 
   function resetAppState() {
@@ -281,7 +286,7 @@ function MintSection() {
         buyAmount={buyAmount}
         purchasedIds={lastPurchasedShibaIds}
         appState={appState}
-        contractAddress={spaceShibasAddress}
+        contractAddress={SPACE_SHIBAS_ADDRESS}
       />}
 
       <div
