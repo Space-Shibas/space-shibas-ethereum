@@ -18,7 +18,7 @@ import {usePrevious} from "./usePrevious";
 
 const SPACE_SHIBAS_ADDRESS = '0xfb5b1646c1a66931bc1bf521c8a64634786926c5'
 const CHAIN_ID = '0x4'
-export const OPENSEA_NAME = 'SpaceShibas'
+export const OPENSEA_NAME = 'spaceshibas'
 
 const provider = resolveProvider()
 const spaceShibas = createContractHelper(SPACE_SHIBAS_ADDRESS, SpaceShibas.abi, provider)
