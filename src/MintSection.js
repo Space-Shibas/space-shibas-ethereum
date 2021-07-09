@@ -16,8 +16,8 @@ import {useSmoothScrollTo} from "./useSmoothScrollTo";
 import {useLocalStorage} from './useLocalStorage'
 import {usePrevious} from "./usePrevious";
 
-const SPACE_SHIBAS_ADDRESS = '0xfb5b1646c1a66931bc1bf521c8a64634786926c5'
-const CHAIN_ID = '0x4'
+const SPACE_SHIBAS_ADDRESS = '0xeF81c2C98cb9718003A89908e6bd1a5fA8A098A3'
+const CHAIN_ID = '0x1'
 export const OPENSEA_NAME = 'spaceshibas'
 
 const provider = resolveProvider()
@@ -32,7 +32,9 @@ export const APP_STATE = {
 }
 
 // Reload on chain change
-window.ethereum.on('chainChanged', (_chainId) => window.location.reload())
+if (window.ethereum) {
+  window.ethereum.on('chainChanged', (_chainId) => window.location.reload())
+}
 
 function wait(ms) {
   return new Promise(function(resolve) {
@@ -174,8 +176,7 @@ function MintSection() {
 
   }
 
-  const formattedEthAmount = provider ? `${utils.formatEther(buyPrice.wei.mul(buyAmount).mul(utils.parseUnits('0.01')))} ETH` : undefined
-  // const formattedEthAmount = provider ? `${utils.formatEther(buyPrice.wei.mul(buyAmount))} ETH` : undefined
+  const formattedEthAmount = provider ? `${utils.formatEther(buyPrice.wei.mul(buyAmount))} ETH` : undefined
 
   function getMintButton() {
     switch (appState) {
@@ -314,14 +315,14 @@ function MintSection() {
       >
         <p>View my shibas on:</p>
         <a
-          href={`https://opensea.io/${window.ethereum.selectedAddress}/${OPENSEA_NAME}`}
+          href={`https://opensea.io/${window.ethereum?.selectedAddress}/${OPENSEA_NAME}`}
           target='_blank'
           rel='noreferrer'
         >
           OpenSea
         </a>
         <a
-          href={`https://rarible.com/user/${window.ethereum.selectedAddress}?tab=owned`}
+          href={`https://rarible.com/user/${window.ethereum?.selectedAddress}?tab=owned`}
           target='_blank'
           rel='noreferrer'
         >
