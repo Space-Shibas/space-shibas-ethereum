@@ -31,6 +31,9 @@ export const APP_STATE = {
   soldOut: 'SOLD_OUT',
 }
 
+// Reload on chain change
+window.ethereum.on('chainChanged', (_chainId) => window.location.reload())
+
 function wait(ms) {
   return new Promise(function(resolve) {
     setTimeout(resolve, ms);
