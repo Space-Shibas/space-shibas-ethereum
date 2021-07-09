@@ -18,6 +18,7 @@ import {usePrevious} from "./usePrevious";
 
 const SPACE_SHIBAS_ADDRESS = '0xfb5b1646c1a66931bc1bf521c8a64634786926c5'
 const CHAIN_ID = '0x4'
+
 const provider = resolveProvider()
 const spaceShibas = createContractHelper(SPACE_SHIBAS_ADDRESS, SpaceShibas.abi, provider)
 const useSpaceShibasState = createContractStateHook(spaceShibas.reader)
@@ -126,7 +127,12 @@ function MintSection() {
     let txHash
     try {
       // throw Error('Fake error pre-tx.')
-      const transaction = await spaceShibas.signer.buy(buyAmount, { value: etherAmount })
+      const transaction = await spaceShibas.signer.buy(
+        buyAmount, {
+          value: etherAmount,
+          gasLimit: `0x${(buyAmount * 180000).toString(16)}`
+        }
+      )
       txHash = transaction.hash
       // throw Error('Fake error post-tx.')
       setAppState(APP_STATE.waitingForTx)
