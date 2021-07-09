@@ -85,7 +85,10 @@ function MintSection() {
     transformData: (data) => data.toNumber(),
   })
 
-  const allSold = maxShibaCount === shibasMinted
+  let allSold = maxShibaCount === shibasMinted
+  if (!window.ethereum) {
+    allSold = false
+  }
 
   const shibasMintedPrevious = usePrevious(shibasMinted)
   useEffect(() => {
